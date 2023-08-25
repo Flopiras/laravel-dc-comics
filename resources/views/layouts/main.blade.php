@@ -13,6 +13,10 @@
     @vite('resources/js/app.js')
 </head>
 <body>
+
+    {{-- header --}}
+    @include('includes.header')
+
     <main>
         @yield('main')
     </main>
