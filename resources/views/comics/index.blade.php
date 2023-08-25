@@ -13,7 +13,7 @@
             <img src="{{ $comic['thumb'] }}" class="card-img-top" alt="{{ $comic['title'] }}">
             <div class="card-body">
               <h5 class="card-title">{{ $comic['title'] }}</h5>
-              <p class="card-text">{{ $comic['description'] }}</p>
+              <p class="card-text">{{ substr(($comic['description']), 0, 100)}}...</p>
               <a href="{{url("/comics.{comic}")}}" class="btn btn-primary">Read more</a>
             </div>
           </div>
