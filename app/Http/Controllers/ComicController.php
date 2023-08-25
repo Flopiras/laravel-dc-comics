@@ -12,7 +12,10 @@ class ComicController extends Controller
      */
     public function index()
     {
-        return view('comics.index');
+
+        $comics = config('commics');
+
+        return view('comics.index', compact('comics'));
     }
 
     /**
