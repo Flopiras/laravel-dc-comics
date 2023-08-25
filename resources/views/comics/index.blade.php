@@ -1,4 +1,4 @@
-@extends('main.layouts')
+@extends('layouts.main')
 
 @section('title', 'Comics')
 
