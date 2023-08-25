@@ -12,7 +12,7 @@
               </li>
               {{-- comics --}}
               <li class="nav-item">
-                <a class="nav-link @if(Route::is('comics*')) active @endif" href="comics.index">Comics</a>
+                <a class="nav-link @if(Route::is('comics*')) active @endif" href="{{route('comics.index')}}">Comics</a>
               </li>
               
             </ul>
