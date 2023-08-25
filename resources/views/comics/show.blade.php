@@ -16,7 +16,17 @@
                     <img class="img-fluid" src="{{ $comic['thumb'] }}"  alt="{{ $comic['title'] }}">
                     </div>
                     <div class="col-9">
-                    <p class="card-text">{{ $comic['description'] }}</p>
+                        <p class="card-text">{{ $comic['description'] }}</p>
+                        {{-- artists --}}
+                        <div class="d-flex justify-content-center ">
+                            <h5 class="me-2">Artists:</h5>
+                            <p> {{ $comic['artists'] }}</p>
+                        </div>
+                        {{-- writers --}}
+                        <div class="d-flex justify-content-center ">
+                            <h5 class="me-2">Writers:</h5>
+                            <p> {{ $comic['writers'] }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
