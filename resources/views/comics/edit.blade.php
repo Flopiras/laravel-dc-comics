@@ -5,7 +5,7 @@
 @section('main')
 <div class="container mt-4">
     {{-- form --}}
-    <form method="POST" action="{{ route('comics.update', $comic)}}">
+    <form method="POST" action="{{ route('comics.update', $comic)}}" novalidate>
         {{-- token --}}
         @csrf
         {{-- method --}}
