@@ -13,4 +13,6 @@ class Comic extends Model
     {
         return substr(($this->description), 0, 30);
     }
+
+    protected $fillable = ['title', 'description', 'thumb', 'price', 'series', 'sale_date', 'type', 'artists', 'writers'];
 }
