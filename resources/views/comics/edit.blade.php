@@ -17,7 +17,7 @@
             <div class="col-3">
                 <div class="mb-3">
                     <label for="title" class="form-label fw-bold">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{ $comic->title }}" required>
+                    <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Title" value="{{ old('title', $comic->title) }}" required>
                 </div>
             </div>
 
@@ -25,7 +25,7 @@
             <div class="col-2">
                 <div class="mb-3">
                     <label for="price" class="form-label fw-bold">Price</label>
-                    <input type="text" class="form-control" id="price" name="price" placeholder="Price" value="{{ $comic->price }}" required>
+                    <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="Price" value="{{ old('price', $comic->price) }}" required>
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
             <div class="col-3">
                 <div class="mb-3">
                     <label for="series" class="form-label fw-bold">Series</label>
-                    <input type="text" class="form-control" id="series" name="series" placeholder="Series" value="{{ $comic->series }}" required>
+                    <input type="text" class="form-control @error('series') is-invalid @enderror" id="series" name="series" placeholder="Series" value="{{ old('series',$comic->series) }}" required>
                 </div>
             </div>
         
@@ -41,7 +41,7 @@
             <div class="col-3">
                 <div class="mb-3">
                     <label for="sale_date" class="form-label fw-bold">Sale date</label>
-                    <input type="date" class="form-control" id="sale_date" name="sale_date" placeholder="Sale date" value="{{ $comic->sale_date }}" min="1800-01-01" max="2023-12-31" required>
+                    <input type="date" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date" placeholder="Sale date" value="{{ old('sale_date', $comic->sale_date) }}" min="1800-01-01" max="2023-12-31" required>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
             <div class="col-2">
                 <div class="mb-3">
                     <label for="type" class="form-label fw-bold">Type</label>
-                    <input type="text" class="form-control" id="type" name="type" placeholder="Type" value="{{ $comic->type }}" required>
+                    <input type="text" class="form-control @error('type') is-invalid @enderror" id="type" name="type" placeholder="Type" value="{{ old('type', $comic->type) }}" required>
                 </div>
             </div>
         
@@ -57,18 +57,18 @@
             <div class="col-7">
                 <div class="mb-3">
                     <label for="thumb" class="form-label fw-bold">Image</label>
-                    <input thumb="url" class="form-control" id="thumb" name="thumb" placeholder="Type" value="{{ $comic->thumb }}" >
+                    <input thumb="url" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" placeholder="Type" value="{{ old('thumb', $comic->thumb) }}" >
                 </div>
             </div>
             <div class="col-2">
-                <img src="{{ $comic->thumb ?? 'https://marcolanci.it/utils/placeholder.jpg' }}" class="img-fluid" id="image-preview" alt="preview">
+                <img src="{{ old('thumb', $comic->thumb ?? 'https://marcolanci.it/utils/placeholder.jpg') }}" class="img-fluid" id="image-preview" alt="preview">
             </div>
 
             {{-- artists --}}
             <div class="col-12">
                 <div class="mb-3">
                     <label for="artists" class="form-label fw-bold"> Artists </label>
-                    <textarea class="form-control" id="artists" name="artists" rows="3">{{ $comic->artists }}</textarea>
+                    <textarea class="form-control @error('artists') is-invalid @enderror" id="artists" name="artists" rows="3">{{ old('srtists', $comic->artists) }}</textarea>
                 </div>
             </div>
 
@@ -76,7 +76,7 @@
             <div class="col-12">
                 <div class="mb-3">
                     <label for="writers" class="form-label fw-bold"> Writers </label>
-                    <textarea class="form-control" id="writers" name="writers" rows="3">{{ $comic->writers }}</textarea>
+                    <textarea class="form-control @error('writers') is-invalid @enderror" id="writers" name="writers" rows="3">{{ old('writers', $comic->writers) }}</textarea>
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
             <div class="col-12">
                 <div class="mb-3">
                     <label for="description" class="form-label fw-bold"> Description </label>
-                    <textarea class="form-control" id="description" name="description" rows="6">{{ $comic->description }}</textarea>
+                    <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="6">{{ old('description', $comic->description) }}</textarea>
                 </div>
             </div>
         </div>
