@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="col-2">
-            <img src="{{ $comic->thumb ?? 'https://marcolanci.it/utils/placeholder.jpg' }}" class="img-fluid" alt="preview">
+            <img src="{{ $comic->thumb ?? 'https://marcolanci.it/utils/placeholder.jpg' }}" class="img-fluid" id="image-preview" alt="preview">
         </div>
 
         {{-- description --}}
@@ -66,8 +66,12 @@
             </div>
         </div>
 
-    {{-- thumb --}}
     </div>
     
 </div>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/image-preview.js')
+
 @endsection
