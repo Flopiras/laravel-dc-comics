@@ -64,6 +64,22 @@
                 <img src="{{ $comic->thumb ?? 'https://marcolanci.it/utils/placeholder.jpg' }}" class="img-fluid" id="image-preview" alt="preview">
             </div>
 
+            {{-- artists --}}
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="artists" class="form-label fw-bold"> Artists </label>
+                    <textarea class="form-control" id="artists" name="artists" rows="3">{{ $comic->artists }}</textarea>
+                </div>
+            </div>
+
+            {{-- writers --}}
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="writers" class="form-label fw-bold"> Writers </label>
+                    <textarea class="form-control" id="writers" name="writers" rows="3">{{ $comic->writers }}</textarea>
+                </div>
+            </div>
+
             {{-- description --}}
             <div class="col-12">
                 <div class="mb-3">
