@@ -27,12 +27,16 @@
                             <h5 class="me-2">Writers:</h5>
                             <p> {{ $comic['writers'] }}</p>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
         
+        {{-- button back --}}
         <a href="{{route('comics.index')}}" class="btn btn-primary mt-4">Back</a>
+        {{-- button edit --}}
+        <a href="{{route('comics.edit', $comic )}}" class="btn btn-warning mt-4 text-end">Edit Comic</a>
     </div>
 </section>
 
