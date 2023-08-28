@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ComicController extends Controller
 {
@@ -56,7 +57,7 @@ class ComicController extends Controller
     {
 
         $request->validate([
-            'title' => 'required|string|unique:comics',
+            'title' => ['required', 'string', Rule::unique('comics')->ignore($comic->id)],
             'description' => 'nullable|string',
             'thumb' => 'nullable|string',
             'price' => 'nullable|string',
