@@ -33,10 +33,21 @@
             </div>
         </div>
         
-        {{-- button back --}}
-        <a href="{{route('comics.index')}}" class="btn btn-primary mt-4">Back</a>
-        {{-- button edit --}}
-        <a href="{{route('comics.edit', $comic )}}" class="btn btn-warning mt-4 text-end">Edit Comic</a>
+        {{-- buttons --}}
+        <div class="buttons d-flex">
+            {{-- back --}}
+            <a href="{{route('comics.index')}}" class="btn btn-primary mt-4">Back</a>
+
+            {{-- edit --}}
+            <a href="{{route('comics.edit', $comic )}}" class="btn btn-warning mx-3 mt-4 text-end">Edit Comic</a>
+
+            {{-- delete --}}
+            <form method="POST" action="{{route('comics.destroy', $comic)}}" class="mt-4">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger">Delete Comic</button>
+            </div>
+        </form>
     </div>
 </section>
 
