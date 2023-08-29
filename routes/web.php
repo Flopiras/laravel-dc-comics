@@ -23,3 +23,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
 // show
 Route::get('/comics/{comic}', [ComicController::class, 'show'])->name('comics.show');
+// edit
+Route::get('/comics/{comic}/edit', [ComicController::class, 'edit'])->name('comics.edit');
+Route::put('/comics/{comic}', [ComicController::class, 'update'])->name('comics.update');
