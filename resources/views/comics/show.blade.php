@@ -42,13 +42,26 @@
             <a href="{{route('comics.edit', $comic )}}" class="btn btn-warning mx-3 mt-4 text-end">Edit Comic</a>
 
             {{-- delete --}}
-            <form method="POST" action="{{route('comics.destroy', $comic)}}" class="mt-4">
+            <form method="POST" action="{{route('comics.destroy', $comic)}}" id="delete-form" class="mt-4">
                 @csrf
                 @method('DELETE')
                 <button class="btn btn-danger">Delete Comic</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </section>
 
+@endsection
+
+@section('scripts')
+    <script>
+        const deleteForm = document.getElementById('delete-form');
+
+        deleteForm.addEventListener('submit', e => {
+            e.preventDefault();
+
+            const isConfirmed = confirm('Do you really want to delete this comic?');
+            if(isConfirmed) deleteForm.submit();
+        })
+    </script>
 @endsection
