@@ -5,6 +5,8 @@
 @section('main')
 <section id="current-series">
     <div class="container mt-4">
+      <a href="{{route('comics.create')}}" class="btn btn-success mb-3">Create new comic</a>
+
         <div class="row row-cols-4">
             @foreach($comics as $comic)
             <div class="col">

@@ -23,7 +23,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -31,7 +31,23 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => ['required', 'string', Rule::unique('comics')],
+            'description' => 'nullable|string',
+            'thumb' => 'nullable|string',
+            'price' => 'nullable|string',
+            'series' => 'nullable|string',
+            'sale_date' => 'nullable|string',
+            'type' => 'nullable|string',
+            'artists' => 'nullable|string',
+            'writers' => 'nullable|string'
+        ]);
+
+        $data = $request->all();
+        $comic = new Comic();
+        $comic->fill($data);
+        $comic->save();
+        return to_route('comics.show', $comic);
     }
 
     /**
@@ -45,8 +61,25 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Comic $comic)
+    public function edit(Request $request, Comic $comic)
     {
+
+        $request->validate([
+            'title' => ['required', 'string', Rule::unique('comics')->ignore($comic->id)],
+            'description' => 'nullable|string',
+            'thumb' => 'nullable|string',
+            'price' => 'nullable|string',
+            'series' => 'nullable|string',
+            'sale_date' => 'nullable|string',
+            'type' => 'nullable|string',
+            'artists' => 'nullable|string',
+            'writers' => 'nullable|string'
+        ]);
+
+        $data = $request->all();
+
+        $comic->update($data);
+
         return view('comics.edit', compact('comic'));
     }
 
